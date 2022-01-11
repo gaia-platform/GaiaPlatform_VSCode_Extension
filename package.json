@@ -1,7 +1,8 @@
 {
-    "name": "gaia-platform",
-    "displayName": "Gaia Platform Intellisense",
-    "description": "Intellisense for Gaia Platform",
+    "name": "gaia-tools",
+    "publisher": "gaia-platform",
+    "displayName": "Gaia Platform IntelliSense",
+    "description": "IntelliSense for Gaia Platform rulesets and schemas",
     "version": "0.1.0",
     "engines": {
         "vscode": "^1.59.0"
