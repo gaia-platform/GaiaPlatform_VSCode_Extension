@@ -1,7 +1,7 @@
 {
     "name": "gaiaplatform-language-client",
     "description": "VSCode client for language server",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "engines": {
         "vscode": "^1.59.0"
     },
