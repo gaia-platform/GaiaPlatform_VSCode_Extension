@@ -1,3 +1,6 @@
+/* Use of this source code is governed by an MIT
+license that can be found in the LICENSE.txt file. */
+
 import { hover_info } from './hover_info';
 import {
     ExtensionContext,
