@@ -1,3 +1,6 @@
+/* Use of this source code is governed by an MIT
+license that can be found in the LICENSE.txt file. */
+
 // This file contains the info for all of the hovers for gaia terminology.
 
 export const hover_info = {
