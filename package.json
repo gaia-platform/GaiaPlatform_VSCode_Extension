@@ -3,6 +3,11 @@
     "publisher": "gaia-platform",
     "displayName": "Gaia Platform IntelliSense",
     "description": "IntelliSense for Gaia Platform rulesets and schemas",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gaia-platform/GaiaPlatform_VSCode_Extension"
+    },
+    "icon": "images/favicon.png",
     "version": "0.1.0",
     "engines": {
         "vscode": "^1.59.0"
