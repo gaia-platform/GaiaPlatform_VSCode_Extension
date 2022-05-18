@@ -1,0 +1,35 @@
+name: Build Gaia Extension
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+
+      - name: clean install dependencies
+        run: npm ci
+
+      - name: compile and create vsix
+        run: npm run package
+
+      - name: upload vsix as artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: gaia-platform-tools-0.2.4.vsix
+          path: ${{github.workspace}}/gaia-platform-tools-0.2.4.vsix
