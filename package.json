@@ -1,0 +1,199 @@
+{
+    "name": "gaia-platform-tools",
+    "publisher": "GaiaPlatform",
+    "displayName": "Gaia Tools",
+    "description": "Syntax Highlighting and Data Navigator for Gaia Applications",
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/gaia-platform/GaiaPlatform_VSCode_Extension"
+    },
+    "version": "0.2.4",
+    "preview": true,
+    "icon": "resources/gaia_transparent.png",
+    "engines": {
+        "vscode": "^1.47.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "activationEvents": [
+        "onLanguage:ruleset",
+        "onLanguage:ddl",
+        "onView:databases"
+    ],
+    "main": "./build/extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "ruleset",
+                "aliases": [
+                    "ruleset"
+                ],
+                "extensions": [
+                    ".ruleset"
+                ],
+                "configuration": "./language-configurations/ruleset-language-configuration.json"
+            },
+            {
+                "id": "ddl",
+                "aliases": [
+                    "ddl"
+                ],
+                "extensions": [
+                    ".ddl"
+                ],
+                "configuration": "./language-configurations/ddl-language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "ruleset",
+                "scopeName": "source.cpp.ruleset",
+                "path": "./syntaxes/ruleset.tmLanguage.json",
+                "embeddedLanguages": {
+                    "meta.preprocessor.macro.contents": "cpp"
+                }
+            },
+            {
+                "language": "ddl",
+                "scopeName": "source.ddl",
+                "path": "./syntaxes/ddl.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "ruleset",
+                "path": "./snippets/ruleset.json"
+            },
+            {
+                "language": "ddl",
+                "path": "./snippets/ddl.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "databases.showRecords",
+                "title": "Display Records",
+                "icon": {
+                    "light": "resources/light/boolean.svg",
+                    "dark": "resources/dark/boolean.svg"
+                }
+            },
+            {
+                "command": "databases.showRelatedRecords",
+                "title": "Display Related Records",
+                "icon": {
+                    "light": "resources/light/boolean.svg",
+                    "dark": "resources/dark/boolean.svg"
+                }
+            },
+            {
+                "command": "databases.refreshEntry",
+                "title": "Refresh",
+                "icon": {
+                    "light": "resources/light/refresh.svg",
+                    "dark": "resources/dark/refresh.svg"
+                }
+            }
+        ],
+        "viewsWelcome": [
+            {
+                "view": "databases",
+                "contents": "A Gaia Database Server was not found.\n"
+            }
+        ],
+        "views": {
+            "gaia-explorer": [
+                {
+                    "id": "databases",
+                    "name": "Databases"
+                }
+            ]
+        },
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "gaia-explorer",
+                    "title": "Gaia Explorer",
+                    "icon": "resources/gaia_logo.png"
+                }
+            ]
+        },
+        "menus": {
+            "view/title": [
+                {
+                    "command": "databases.refreshEntry",
+                    "when": "view == databases",
+                    "group": "navigation"
+                }
+            ],
+            "view/item/context": [
+                {
+                    "command": "databases.showRecords",
+                    "when": "view == databases && viewItem == table",
+                    "group": "inline"
+                }
+            ]
+        }
+    },
+    "dependencies": {
+        "@vscode/webview-ui-toolkit": "^1.0.0",
+        "react": "^18.0.0",
+        "react-data-grid": "^7.0.0-beta.11",
+        "react-dom": "^18.0.0"
+    },
+    "resolutions": {
+        "terser": "3.14.1"
+    },
+    "watch": {
+        "build": {
+            "patterns": [
+                "src"
+            ],
+            "extensions": [
+                ".ts",
+                ".tsx",
+                ".css"
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile && webpack --mode production --devtool hidden-source-map",
+        "lint": "eslint src --ext .ts --ext .js --ext .jsx --ext .tsx",
+        "compile": "npm run lint && npm-run-all compile:*",
+        "watch": "npm-run-all -p watch:*",
+        "compile:extension": "tsc -p ./",
+        "compile:views": "webpack --mode development",
+        "watch:extension": "tsc --watch -p ./",
+        "watch:views": "webpack --watch --mode development",
+        "package": "vsce package --allow-missing-repository",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test:": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@svgr/webpack": "^6.2.1",
+        "@types/node": "^10.17.60",
+        "@types/react": "^16.14.24",
+        "@types/react-dom": "^16.9.14",
+        "@typescript-eslint/eslint-plugin": "^5.21.0",
+        "@typescript-eslint/parser": "^5.21.0",
+        "css-loader": "^6.7.1",
+        "eslint": "^8.14.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-plugin-react": "^7.29.4",
+        "npm-run-all": "^4.1.5",
+        "style-loader": "^3.3.1",
+        "ts-loader": "^9.2.8",
+        "typescript": "^3.3.1",
+        "vsce": "^2.7.0",
+        "vscode": "^1.1.37",
+        "webpack": "^5.70.0",
+        "webpack-cli": "^4.9.2"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ]
+}

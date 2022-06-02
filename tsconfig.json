@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "outDir" : "build",
+        "sourceMap" : true,
+        "rootDir": "src",
+        "strict" : true
+    },
+    "include":["src"],
+    "exclude": [
+        "node_modules",
+        ".vscode-test",
+        "**/data_view/app/dataview.css",
+        "**/data_view/app/dataview.tsx",
+        "**/data_view/app/index.tsx",
+        "**/data_view/app/index.css",
+        "**/data_view/app/tsconfig.json"
+    ]
+}
