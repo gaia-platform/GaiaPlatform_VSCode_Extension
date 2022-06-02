@@ -3,9 +3,9 @@
     "publisher": "GaiaPlatform",
     "displayName": "Gaia Tools",
     "description": "Syntax Highlighting and Data Navigator for Gaia Applications",
-    "repository" : {
-        "type" : "git",
-        "url" : "https://github.com/gaia-platform/GaiaPlatform_VSCode_Extension"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gaia-platform/GaiaPlatform_VSCode_Extension"
     },
     "version": "0.2.4",
     "preview": true,
@@ -138,6 +138,7 @@
     },
     "dependencies": {
         "@vscode/webview-ui-toolkit": "^1.0.0",
+        "minimist": "^1.2.6",
         "react": "^18.0.0",
         "react-data-grid": "^7.0.0-beta.11",
         "react-dom": "^18.0.0"
