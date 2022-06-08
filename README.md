@@ -1,8 +1,5 @@
 # Gaia Platform Tools
 
-## Important Notice
-This is the updated Gaia Platform Extension for Visual Studio Code. We are currently working to remove the old [Gaia Platform Intellisense](https://marketplace.visualstudio.com/items?itemName=gaia-platform.gaia-tools) extension from Marketplace.  If you have installed the `Gaia Platform Intellisense` extension, please uninstall it before installing this one.
-
 ## Features
 The Gaia Platform Tools extension offers the following features:
 
@@ -11,6 +8,8 @@ The Gaia Platform Tools extension offers the following features:
     * [Declarative C++](https://gaia-platform.github.io/gaia-platform-docs.io/articles/reference/declarative-extentions.html) syntax is used to write rules in __ruleset__ files.
 * A database explorer that allows you to browse database, table, and column metadata stored in a Gaia server instance.
 * A data navigator that allows you to view the records stored in the database. In addition, the navigator allows you to view records related to the current record if the schema has defined one or more relationships between the current record's table and other tables in the database.
+
+Please note that database explorer and navigator functionality requires version `0.5.0-beta` or higher of the Gaia Platform SDK.
 
 ## Using the Extension
 It may be helpful to reference the VS Code [User Interface](https://code.visualstudio.com/docs/getstarted/userinterface) documentation to understand how this extension exposes its functionality.
